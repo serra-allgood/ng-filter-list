@@ -25,7 +25,49 @@ export interface FilterToggleEvent {
 
 @Component({
   selector: 'ng-filter-list',
-  templateUrl: '/src/filter-list/filter-list.component.html',
+  template: `
+    <ul class="list-group">
+      <div *ngFor="let menu of menus">
+        <li class="list-group-item toggle" (click)="toggleMenu(menu.name)">
+          <i class="fa" [ngClass]="{ 'fa-chevron-right': isCollapsed(menu.name), 'fa-chevron-down': !isCollapsed(menu.name) }"></i>
+          &nbsp;
+          {{ menu.name }}
+        </li>
+        <li class="list-group-item filter"
+            [hidden]="isCollapsed(menu.name)"
+            *ngFor="let filter of menu.filters"
+            [ngClass]="{ active: isToggled(filter) }"
+            (click)="toggleFilter(filter)">
+          {{ filter }}
+        </li>
+        <div *ngFor="let subMenu of menu.subMenus" [hidden]="isCollapsed(menu.name)">
+          <ng-container *ngTemplateOutlet="subMenuDisplay; context: { subMenu: subMenu, count: 1 }">
+          </ng-container>
+        </div>
+      </div>
+    </ul>
+
+    <ng-template #subMenuDisplay let-subMenu="subMenu" let-count="count">
+      <li class="list-group-item toggle" (click)="toggleMenu(subMenu.name)">
+        <span *ngFor="let i of count | filledArray">&emsp;</span>
+        <i class="fa" [ngClass]="{ 'fa-chevron-right': isCollapsed(subMenu.name), 'fa-chevron-down': !isCollapsed(subMenu.name) }"></i>
+        &nbsp;
+        {{ subMenu.name }}
+      </li>
+      <li class="list-group-item filter"
+          [hidden]="isCollapsed(subMenu.name)"
+          *ngFor="let subFilter of subMenu.filters"
+          [ngClass]="{ active: isToggled(subFilter) }"
+          (click)="toggleFilter(subFilter)">
+        <span *ngFor="let i of count | filledArray">&emsp;</span>
+        {{ subFilter }}
+      </li>
+      <div *ngFor="let recursiveMenu of subMenu.subMenus" [hidden]="isCollapsed(subMenu.name)">
+        <ng-container *ngTemplateOutlet="subMenuDisplay; context: { subMenu: recursiveMenu, count: count + 1 }">
+        </ng-container>
+      </div>
+    </ng-template>
+  `,
   styleUrls: ['./filter-list.component.css']
 })
 export class NgFilterList implements OnChanges, OnInit, OnDestroy {
