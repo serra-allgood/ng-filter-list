@@ -17,7 +17,7 @@ export interface Menu {
   subMenus?: Array<Menu>;
 }
 
-interface FilterToggleEvent {
+export interface FilterToggleEvent {
   menu: string;
   filters: Array<string>;
   toggle: boolean;
