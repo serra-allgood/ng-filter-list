@@ -5,6 +5,7 @@
   "repository": "https://github.com/serracorwin/filter-list",
   "author": "Serra Allgood <sallgood@springbot.com>",
   "license": "MIT",
+  "main": "./dist/index.js",
   "dependencies": {
     "@angular/common": "^4.4.3",
     "@angular/core": "^4.4.3",
