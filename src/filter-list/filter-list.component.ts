@@ -26,7 +26,7 @@ export interface FilterToggleEvent {
 @Component({
   selector: 'ng-filter-list',
   templateUrl: '/src/filter-list/filter-list.component.html',
-  styleUrls: ['/src/filter-list/filter-list.component.css']
+  styleUrls: ['./filter-list.component.css']
 })
 export class NgFilterList implements OnChanges, OnInit, OnDestroy {
   menuToggles = {};
