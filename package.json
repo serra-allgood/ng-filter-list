@@ -10,6 +10,8 @@
     "@angular/core": "^4.4.3",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^4.0.3",
+    "@types/lodash": "^4.14.76",
+    "lodash": "^4.17.4",
     "rxjs": "^5.4.3",
     "typescript": "^2.5.3",
     "zone.js": "^0.8.17"
