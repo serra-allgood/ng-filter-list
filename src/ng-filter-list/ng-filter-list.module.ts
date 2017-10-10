@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StoreModule } from '@ngrx/store';
 
-import { NgFilterList } from './filter-list.component';
+import { NgFilterList } from './ng-filter-list.component';
 import { FilledArrayPipe } from '../pipes/filled-array.pipe';
 import { menuToggles } from '../reducers/menu-toggles.reducer';
 import { filterToggles } from '../reducers/filter-toggles.reducer';
@@ -17,8 +17,8 @@ import { filterToggles } from '../reducers/filter-toggles.reducer';
   ],
   exports: [NgFilterList]
 })
-export class FilterListModule {
+export class NgFilterListModule {
   static forRoot(): ModuleWithProviders {
-    return { ngModule: FilterListModule };
+    return { ngModule: NgFilterListModule };
   }
 }

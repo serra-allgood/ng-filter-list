@@ -68,7 +68,7 @@ export interface FilterToggleEvent {
       </div>
     </ng-template>
   `,
-  styleUrls: ['/src/filter-list/filter-list.component.css']
+  styleUrls: ['/src/filter-list/ng-filter-list.component.css']
 })
 export class NgFilterList implements OnChanges, OnInit, OnDestroy {
   menuToggles = {};
