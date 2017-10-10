@@ -7,11 +7,11 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "rimraf ./dist && tsc"
+    "prepublish": "rimraf ./dist && ngc"
   },
   "dependencies": {
-    "@angular/common": "^4.4.3",
-    "@angular/core": "^4.4.3",
+    "@angular/common": "^4.4.4",
+    "@angular/core": "^4.4.4",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^4.0.3",
     "@types/lodash": "^4.14.76",
@@ -21,7 +21,10 @@
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
+    "@angular/compiler": "^4.4.4",
+    "@angular/compiler-cli": "^4.4.4",
     "rimraf": "^2.6.2",
     "typescript": "^2.5.3"
-  }
+  },
+  "peerDependencies": {}
 }
