@@ -6,6 +6,7 @@
   "author": "Serra Allgood <sallgood@springbot.com>",
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "rimraf ./dist && rimraf ./compiled && ngc"
   },
