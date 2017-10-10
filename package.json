@@ -1,13 +1,13 @@
 {
   "name": "ng-filter-list",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Angular 4 toggleable menu with any level of submenus",
   "repository": "https://github.com/serracorwin/filter-list",
   "author": "Serra Allgood <sallgood@springbot.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "rimraf ./dist && rimraf ./compiled && ngc"
+    "prepublish": "rimraf ./dist && ngc"
   },
   "dependencies": {
     "@ngrx/core": "^1.2.0",
@@ -15,8 +15,7 @@
     "@types/lodash": "^4.14.76",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
-    "rxjs": "^5.4.3",
-    "zone.js": "^0.8.17"
+    "rxjs": "^5.4.3"
   },
   "devDependencies": {
     "@angular/compiler": "^4.4.4",
