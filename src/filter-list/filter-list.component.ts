@@ -70,7 +70,7 @@ export interface FilterToggleEvent {
   `,
   styleUrls: ['/src/ng-filter-list/ng-filter-list.component.css']
 })
-export class NgFilterList implements OnChanges, OnInit, OnDestroy {
+export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
   menuToggles = {};
   filterToggles = {};
   menuToggles$: Observable<object>;
