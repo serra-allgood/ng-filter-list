@@ -9,6 +9,6 @@ import { FilledArrayPipe } from './pipes/filled-array.pipe';
 })
 export class NgFilterListModule {
   static forRoot(): ModuleWithProviders {
-    return { ngModule: NgFilterListModule };
+    return { ngModule: NgFilterListModule, providers: [] };
   }
 }

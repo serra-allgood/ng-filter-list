@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "rimraf ./dist && ngc"
+    "prepublish": "rimraf ./dist && rimraf ./compiled && ngc"
   },
   "dependencies": {
     "@ngrx/core": "^1.2.0",

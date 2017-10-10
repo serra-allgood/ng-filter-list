@@ -2,5 +2,5 @@
 /node_modules
 npm-debug.log
 *.ts
-/compiled
+*.ngsummary.json
 *.ngFactory.ts
