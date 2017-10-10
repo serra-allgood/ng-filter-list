@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "scripts": {
-    "prepublish": "tsc"
+    "prepublish": "rimraf ./dist && tsc"
   },
   "dependencies": {
     "@angular/common": "^4.4.3",
@@ -21,6 +21,7 @@
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
+    "rimraf": "^2.6.2",
     "typescript": "^2.5.3"
   }
 }
