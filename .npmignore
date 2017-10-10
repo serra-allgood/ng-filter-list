@@ -1,6 +1,5 @@
 /yarn-error.log
 /node_modules
 npm-debug.log
-*.ts
 *.ngsummary.json
 *.ngFactory.ts

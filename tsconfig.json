@@ -54,6 +54,9 @@
 
     "skipLibCheck": true
   },
+  "exclude": [
+    "node_modules"
+  ],
   "files": ["src/index.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
