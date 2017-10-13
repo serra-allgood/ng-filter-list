@@ -99,7 +99,6 @@ export interface FilterToggleEvent {
       margin-bottom: -1px;
       background-color: #fff;
       border: 1px solid rgba(0, 0, 0, .125);
-      display: block;
     }`
   ]
 })
