@@ -2,7 +2,9 @@
 
 ## Description
 Toggleable Menu with any number of submenus. Meant to be used with @ngrx/store,
-so that the toggled menu state is remembered between page changes.
+so that the toggled menu state is remembered between page changes. Optional
+dependency on Font Awesome for some togge indicators for the menu, which you'll
+have to include in your project yourself.
 
 ## Installation
 To install this component to an external project, follow this procedure:
