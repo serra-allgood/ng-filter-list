@@ -1,6 +1,6 @@
 {
   "name": "ng-filter-list",
-  "version": "0.1.29",
+  "version": "0.2.0",
   "description": "Angular 4 toggleable menu with any level of submenus",
   "keywords": [
     "Angular4",
@@ -23,13 +23,12 @@
     "rxjs": ">=5.4.3"
   },
   "devDependencies": {
+    "@angular/common": "^4.4.5",
     "@angular/compiler": "^4.4.4",
     "@angular/compiler-cli": "^4.4.4",
+    "@angular/core": "^4.4.5",
     "rimraf": "^2.6.2",
     "typescript": "^2.5.3"
   },
-  "peerDependencies": {
-    "@angular/common": "^4.4.4",
-    "@angular/core": "^4.4.4"
-  }
+  "peerDependencies": {}
 }
