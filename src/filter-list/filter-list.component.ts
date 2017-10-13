@@ -27,7 +27,7 @@ export interface FilterToggleEvent {
   selector: 'ng-filter-list',
   template: `
     <ul class="list-group">
-      <div *ngFor="let menu of menus">
+      <ng-container *ngFor="let menu of menus">
         <li class="list-group-item toggle" (click)="toggleMenu(menu.name)">
           <i class="fa" [ngClass]="{ 'fa-chevron-right': isCollapsed(menu.name), 'fa-chevron-down': !isCollapsed(menu.name) }"></i>
           &nbsp;
@@ -44,7 +44,7 @@ export interface FilterToggleEvent {
           <ng-container *ngTemplateOutlet="subMenuDisplay; context: { subMenu: subMenu, count: 1 }">
           </ng-container>
         </div>
-      </div>
+      </ng-container>
     </ul>
 
     <ng-template #subMenuDisplay let-subMenu="subMenu" let-count="count">

@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FilterListComponent } from './filter-list/filter-list.component';
+import { FilterListComponent, FilterToggleEvent, Menu } from './filter-list/filter-list.component';
 import { FilledArrayPipe } from './pipes/filled-array.pipe';
 
 @NgModule({
@@ -14,3 +14,5 @@ export class NgFilterListModule {
     return { ngModule: NgFilterListModule, providers: [] };
   }
 }
+
+export { FilterToggleEvent, Menu } from './filter-list/filter-list.component';
