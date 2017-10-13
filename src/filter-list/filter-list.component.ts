@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs/Subscription';
 
 import * as _ from 'lodash';
 
+import 'font-awesome';
+
 import { MenuState } from '../menu-state.interface';
 import * as FilterToggles from '../actions/filter-toggles.actions';
 import * as MenuToggles from '../actions/menu-toggles.actions';
