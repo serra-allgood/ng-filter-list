@@ -91,11 +91,11 @@ export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.menuTogglesSub = this.menuToggles$.subscribe(toggles => {
-      this.menuToggles = toggles;
+      this.menuToggles = toggles || {};
     });
 
     this.filterTogglesSub = this.filterToggles$.subscribe(toggles => {
-      this.filterToggles = toggles;
+      this.filterToggles = toggles || {};
     });
   }
 
