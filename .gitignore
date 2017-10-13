@@ -3,4 +3,5 @@
 npm-debug.log
 /dist
 /compiled
+/src/demo
 *.metadata.json

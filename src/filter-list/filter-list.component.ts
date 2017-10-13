@@ -68,7 +68,40 @@ export interface FilterToggleEvent {
       </div>
     </ng-template>
   `,
-  styleUrls: ['/src/ng-filter-list/ng-filter-list.component.css']
+  styles: [`
+    :host {
+      display: block;
+    }`,
+    `.toggle,
+    .filter {
+      cursor: pointer;
+    }`,
+    `.list-group {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }`,
+    `.list-group-item:first-child {
+      border-top-right-radius: .25rem;
+      border-top-left-radius: .25rem;
+    }`,
+    `.list-group-item:last-child {
+      border-bottom-right-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }`,
+    `.list-group-item {
+      position: relative;
+      flex-flow: row wrap;
+      align-items: center;
+      padding: .75rem 1.25rem;
+      margin-bottom: -1px;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, .125);
+      display: block;
+    }`
+  ]
 })
 export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
   menuToggles = {};
