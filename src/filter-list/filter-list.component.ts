@@ -99,6 +99,10 @@ export interface FilterToggleEvent {
       margin-bottom: -1px;
       background-color: #fff;
       border: 1px solid rgba(0, 0, 0, .125);
+    }`,
+    `.list-group-item.active {
+      background-color: #111;
+      color: #f4f4f4;
     }`
   ]
 })
