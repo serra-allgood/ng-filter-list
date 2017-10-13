@@ -12,6 +12,7 @@
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
+  list-style: none;
 }
 
 .list-group-item:first-child {
@@ -32,4 +33,5 @@
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .125);
+  display: block;
 }
