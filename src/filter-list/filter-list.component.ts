@@ -72,8 +72,7 @@ export interface FilterToggleEvent {
     :host {
       display: block;
     }`,
-    `.toggle,
-    .filter {
+    `.toggle, .filter {
       cursor: pointer;
     }`,
     `.list-group {
@@ -101,7 +100,7 @@ export interface FilterToggleEvent {
       border: 1px solid rgba(0, 0, 0, .125);
     }`,
     `.list-group-item.active {
-      background-color: #111;
+      background-color: #111111;
       color: #f4f4f4;
     }`
   ]
