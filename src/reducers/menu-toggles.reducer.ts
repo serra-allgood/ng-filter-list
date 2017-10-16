@@ -21,7 +21,7 @@ export function menuToggles(state: object = {}, action: Action): object {
       const newState = {};
 
       _.each(state, (value, key) => {
-        newState[key] = false;
+        newState[key] = true;
       });
 
       return newState;
