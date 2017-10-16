@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export const TOGGLE = '[Filter] Toggle';
 export const ADD = '[Filter] Add';
+export const RESET = '[Filter] Reset';
 
 export class Toggle implements Action {
   readonly type = TOGGLE;
@@ -15,4 +16,8 @@ export class Add implements Action {
   constructor(public payload: string) {}
 }
 
-export type ALL = Toggle | Add;
+export class Reset implements Action {
+  readonly type = RESET;
+}
+
+export type ALL = Toggle | Add | Reset;

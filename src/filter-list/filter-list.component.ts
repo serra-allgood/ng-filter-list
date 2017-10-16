@@ -113,6 +113,7 @@ export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
   filterToggles$: Observable<object>;
   filterTogglesSub: Subscription;
   @Input() menus: Array<Menu>;
+  @Input() useStore: boolean;
   @Output() filterToggled = new EventEmitter<FilterToggleEvent>();
 
   constructor(private store: Store<MenuState>) {
@@ -135,6 +136,11 @@ export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.useStore) {
+      this.store.dispatch(new MenuToggles.Reset());
+      this.store.dispatch(new FilterToggles.Reset());
+    }
+
     this.menuTogglesSub.unsubscribe();
     this.filterTogglesSub.unsubscribe();
   }
