@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, DoCheck, OnDestroy, OnInit, Output, IterableDiffers } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -105,29 +105,27 @@ export interface FilterToggleEvent {
     }`
   ]
 })
-export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
+export class FilterListComponent implements OnInit, DoCheck, OnDestroy {
   menuToggles = {};
   filterToggles = {};
   menuToggles$: Observable<object>;
   menuTogglesSub: Subscription;
   filterToggles$: Observable<object>;
   filterTogglesSub: Subscription;
+  differ: any;
   @Input() menus: Array<Menu>;
   @Input() remember: boolean;
   @Output() filterToggled = new EventEmitter<FilterToggleEvent>();
 
-  constructor(private store: Store<MenuState>) {
+  constructor(private store: Store<MenuState>, private differs: IterableDiffers) {
     this.menuToggles$ = this.store.select(s => s.menuToggles);
     this.filterToggles$ = this.store.select(s => s.filterToggles);
-  }
-
-  ngOnChanges(): void {
-    _.each(this.menus, menu => this.defineToggles(menu));
+    this.differ = this.differs.find([]).create(null);
   }
 
   ngOnInit(): void {
     if (_.isUndefined(this.remember)) {
-      this.remember = true
+      this.remember = true;
     }
 
     this.menuTogglesSub = this.menuToggles$.subscribe(toggles => {
@@ -137,6 +135,14 @@ export class FilterListComponent implements OnChanges, OnInit, OnDestroy {
     this.filterTogglesSub = this.filterToggles$.subscribe(toggles => {
       this.filterToggles = toggles || {};
     });
+  }
+
+  ngDoCheck(): void {
+    const changes = this.differ.diff(this.menus);
+
+    if (changes) {
+      _.each(this.menus, menu => this.defineToggles(menu));
+    }
   }
 
   ngOnDestroy(): void {
