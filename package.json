@@ -20,15 +20,21 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "@angular/common": "5.0.3",
+    "@angular/compiler": "5.0.3",
+    "@angular/compiler-cli": "5.0.3",
+    "@angular/core": "5.0.3",
+    "@ngrx/core": "1.2.0",
+    "@ngrx/store": "4.1.1",
+    "rimraf": "^2.6.2",
+    "rxjs": "5.5.2",
+    "typescript": "~2.4.0",
+    "zone.js": "^0.8.18"
+  },
+  "peerDependencies": {
     "@angular/common": "*",
-    "@angular/compiler": "*",
-    "@angular/compiler-cli": "*",
     "@angular/core": "*",
     "@ngrx/core": "*",
-    "@ngrx/store": "*",
-    "rimraf": "^2.6.2",
-    "rxjs": "*",
-    "typescript": "^2.5.3"
-  },
-  "peerDependencies": {}
+    "@ngrx/store": "*"
+  }
 }
